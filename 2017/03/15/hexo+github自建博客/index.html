@@ -1,0 +1,311 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>MIMI&#39;s BLOG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="mimizhang">
+    
+    <meta name="description" content="hexo+github自建博客系统：MacOS
+1. 安装这是Hexo的官方文档。那么安装Hexo之前你必须安装这两样东西：
+
+Node.js
+Git
+
+在MacOS上你可以使用1234```bash$ brew install node$ brew install git
+如果你还没有安装brew">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="MIMI&#39;s BLOG" title="MIMI&#39;s BLOG"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="MIMI&#39;s BLOG">MIMI&#39;s BLOG</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/03/15/hexo+github自建博客/" title="" itemprop="url"></a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="mimizhang">mimizhang</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2017-03-15T01:51:17.000Z" itemprop="datePublished">2017-03-15</time>
+    Updated:<time datetime="2017-03-15T06:04:31.000Z" itemprop="dateModified">2017-03-15</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-github自建博客"><span class="toc-number">1.</span> <span class="toc-text">hexo+github自建博客</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-安装"><span class="toc-number">1.1.</span> <span class="toc-text">1. 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-github新建仓库repository"><span class="toc-number">1.2.</span> <span class="toc-text">2. github新建仓库repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-本地博客关联到github"><span class="toc-number">1.3.</span> <span class="toc-text">3. 本地博客关联到github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-部署"><span class="toc-number">1.4.</span> <span class="toc-text">4. 部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-FAQ"><span class="toc-number">1.5.</span> <span class="toc-text">5. FAQ</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-在执行-hexo-deploy-后-出现-error-deployer-not-found-github-的错误"><span class="toc-number">1.5.1.</span> <span class="toc-text">5.1 在执行 hexo deploy 后,出现 error deployer not found:github 的错误</span></a></li></ol></li></ol></li></ol>
+		</div>
+		
+		<h1 id="hexo-github自建博客"><a href="#hexo-github自建博客" class="headerlink" title="hexo+github自建博客"></a>hexo+github自建博客</h1><p>系统：MacOS</p>
+<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><p>这是<a href="https://hexo.io/docs/" target="_blank" rel="external">Hexo</a>的官方文档。那么安装Hexo之前你必须安装这两样东西：</p>
+<ul>
+<li><a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a></li>
+<li><a href="http://git-scm.com/" target="_blank" rel="external">Git</a></li>
+</ul>
+<p>在MacOS上你可以使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">```bash</div><div class="line">$ brew install node</div><div class="line">$ brew install git</div></pre></td></tr></table></figure></p>
+<p>如果你还没有安装<code>brew</code>，那么请点击这里<a href="https://brew.sh/index_zh-cn.html" target="_blank" rel="external">Homebrew</a>，安装非常简单。</p>
+<p>Git和Node.js安装完后，你就可以安装Hexo了，在终端输入下面的命令即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure>
+<p>接下来选择你要安装的地方，比如我在<code>/Users/zhangmimi</code>路径下，安装在<code>mimi_blog</code>文件夹下，则输入一下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo init mimi_blog</div><div class="line">$ cd mimi_blog</div><div class="line">$ npm install</div></pre></td></tr></table></figure>
+<p>这样Hexo就算安装成功了。</p>
+<h2 id="2-github新建仓库repository"><a href="#2-github新建仓库repository" class="headerlink" title="2. github新建仓库repository"></a>2. github新建仓库<code>repository</code></h2><p>新建仓库就不用多说了吧，需要注意的是<strong>Repository name</strong>要写成下图中的格式，即：<code>your_user_name.github.io</code>，比如我的用户名是<code>mimizhang</code>，那么仓库名就是<code>mimizhang.github.io</code>。</p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-03-15%20%E4%B8%8A%E5%8D%8811.31.34.png" alt=""></p>
+<h2 id="3-本地博客关联到github"><a href="#3-本地博客关联到github" class="headerlink" title="3. 本地博客关联到github"></a>3. 本地博客关联到github</h2><p>在刚才生成的<strong>mimi_blog</strong>文件夹中有个<strong>_config.yml</strong>文件，打开，拉到最下面，按照下图填写，<code>repository</code>是你的仓库地址，我的仓库地址是<a href="https://github.com/mimizhang/mimizhang.github.io.git。" target="_blank" rel="external">https://github.com/mimizhang/mimizhang.github.io.git。</a></p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-03-15%20%E4%B8%8A%E5%8D%8811.42.10.png" alt=""></p>
+<h2 id="4-部署"><a href="#4-部署" class="headerlink" title="4. 部署"></a>4. 部署</h2><p>以上的准备工作做好之后，下面就是见证奇迹的时刻。</p>
+<p>回到mimi_blog文件夹下，输入下面的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>这样就算部署成功了。你可以再输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>打开<a href="http://localhost:4000/，这样就可以在本地看到你的博客。" target="_blank" rel="external">http://localhost:4000/，这样就可以在本地看到你的博客。</a></p>
+<p>因为你已经部署在github上了，所以github上也可以看到你的博客，比如我的地址是<a href="https://mimizhang.github.io/，打开你的github博客地址，就知道有多神奇了！" target="_blank" rel="external">https://mimizhang.github.io/，打开你的github博客地址，就知道有多神奇了！</a></p>
+<h2 id="5-FAQ"><a href="#5-FAQ" class="headerlink" title="5. FAQ"></a>5. FAQ</h2><h3 id="5-1-在执行-hexo-deploy-后-出现-error-deployer-not-found-github-的错误"><a href="#5-1-在执行-hexo-deploy-后-出现-error-deployer-not-found-github-的错误" class="headerlink" title="5.1 在执行 hexo deploy 后,出现 error deployer not found:github 的错误"></a>5.1 在执行 hexo deploy 后,出现 error deployer not found:github 的错误</h3><p>在mimi_blog文件夹下，输入下面的命令试试：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2017/03/15/hexo+github自建博客/" data-title="MIMI&#39;s BLOG" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2017/03/15/hello-world/" title="Hello World">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  Hello World</span>
+</a>
+</div>
+
+
+</nav>
+
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-github自建博客"><span class="toc-number">1.</span> <span class="toc-text">hexo+github自建博客</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-安装"><span class="toc-number">1.1.</span> <span class="toc-text">1. 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-github新建仓库repository"><span class="toc-number">1.2.</span> <span class="toc-text">2. github新建仓库repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-本地博客关联到github"><span class="toc-number">1.3.</span> <span class="toc-text">3. 本地博客关联到github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-部署"><span class="toc-number">1.4.</span> <span class="toc-text">4. 部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-FAQ"><span class="toc-number">1.5.</span> <span class="toc-text">5. FAQ</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-在执行-hexo-deploy-后-出现-error-deployer-not-found-github-的错误"><span class="toc-number">1.5.1.</span> <span class="toc-text">5.1 在执行 hexo deploy 后,出现 error deployer not found:github 的错误</span></a></li></ol></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2017 
+		
+		<a href="http://yoursite.com" target="_blank" title="mimizhang">mimizhang</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+  </body>
+</html>
