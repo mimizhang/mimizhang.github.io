@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>hexo+github自建博客 | MIMI&#39;s BLOG</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
+
+  <meta name="generator" content="MIMI's BLOG">
+
+  
+  
+  
+
+  
+</head>
+
+
+<body class="post-template">
+
+  <header class="site-head"  style="background-image: url(//blog.ghost.org/content/images/2013/Nov/cover.png)" >
+    <div class="vertical">
+        <div class="site-head-content inner">
+             <a class="blog-logo" href="/"><img src="//blog.ghost.org/content/images/2013/Nov/bloglogo_1-1.png" alt="Blog Logo"/></a> 
+            <h1 class="blog-title">MIMI's BLOG</h1>
+            <h2 class="blog-description"></h2>
+        </div>
+    </div>
+</header>
+  
+
+<main class="content" role="main">
+  <article class="post">
+    <span class="post-meta">
+      <time datetime="2017-03-15T01:51:17.000Z" itemprop="datePublished">
+          2017-03-15
+      </time>
+    
+</span>
+    <h1 class="post-title">hexo+github自建博客</h1>
+    <section class="post-content">
+      <p>系统：MacOS</p>
+<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><p>这是<a href="https://hexo.io/docs/" target="_blank" rel="external">Hexo</a>的官方文档。那么安装Hexo之前你必须安装这两样东西：</p>
+<ul>
+<li><a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a></li>
+<li><a href="http://git-scm.com/" target="_blank" rel="external">Git</a></li>
+</ul>
+<p>在MacOS上你可以使用<code>brew</code>命令，非常方便的安装这两个小家伙，像这样：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ brew install node</div><div class="line">$ brew install git</div></pre></td></tr></table></figure>
+<p>如果你还没有安装<code>brew</code>，那么请点击这里<a href="https://brew.sh/index_zh-cn.html" target="_blank" rel="external">Homebrew</a>，安装非常简单。</p>
+<p>Git和Node.js安装完后，你就可以安装Hexo了，在终端输入下面的命令即可：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure>
+<p>接下来选择你要安装的地方，比如我在<code>/Users/zhangmimi</code>路径下，安装在<code>mimi_blog</code>文件夹下，则输入一下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo init mimi_blog</div><div class="line">$ <span class="built_in">cd</span> mimi_blog</div><div class="line">$ npm install</div></pre></td></tr></table></figure>
+<p>这样Hexo就算安装成功了。</p>
+<h2 id="2-github新建仓库repository"><a href="#2-github新建仓库repository" class="headerlink" title="2. github新建仓库repository"></a>2. github新建仓库<code>repository</code></h2><p>新建仓库就不用多说了吧，需要注意的是<strong>Repository name</strong>要写成下图中的格式，即：<code>your_user_name.github.io</code>，比如我的用户名是<code>mimizhang</code>，那么仓库名就是<code>mimizhang.github.io</code>。</p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-03-15%20%E4%B8%8A%E5%8D%8811.31.34.png" alt=""></p>
+<h2 id="3-本地博客关联到github"><a href="#3-本地博客关联到github" class="headerlink" title="3. 本地博客关联到github"></a>3. 本地博客关联到github</h2><p>在刚才生成的<strong>mimi_blog</strong>文件夹中有个<strong>_config.yml</strong>文件，打开，拉到最下面，按照下图填写，<code>repository</code>是你的仓库地址，我的仓库地址是<a href="https://github.com/mimizhang/mimizhang.github.io.git。" target="_blank" rel="external">https://github.com/mimizhang/mimizhang.github.io.git。</a></p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-03-15%20%E4%B8%8A%E5%8D%8811.42.10.png" alt=""></p>
+<h2 id="4-部署"><a href="#4-部署" class="headerlink" title="4. 部署"></a>4. 部署</h2><p>以上的准备工作做好之后，下面就是见证奇迹的时刻。</p>
+<p>回到mimi_blog文件夹下，输入下面的命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>这样就算部署成功了。你可以再输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>打开<a href="http://localhost:4000/，这样就可以在本地看到你的博客。" target="_blank" rel="external">http://localhost:4000/，这样就可以在本地看到你的博客。</a></p>
+<p>因为你已经部署在github上了，所以github上也可以看到你的博客，比如我的地址是<a href="https://mimizhang.github.io/，打开你的github博客地址，就知道有多神奇了！" target="_blank" rel="external">https://mimizhang.github.io/，打开你的github博客地址，就知道有多神奇了！</a></p>
+<h2 id="5-FAQ"><a href="#5-FAQ" class="headerlink" title="5. FAQ"></a>5. FAQ</h2><h3 id="5-1-在执行-hexo-deploy-后-出现-error-deployer-not-found-github-的错误"><a href="#5-1-在执行-hexo-deploy-后-出现-error-deployer-not-found-github-的错误" class="headerlink" title="5.1 在执行 hexo deploy 后,出现 error deployer not found:github 的错误"></a>5.1 在执行 hexo deploy 后,出现 error deployer not found:github 的错误</h3><p>在mimi_blog文件夹下，输入下面的命令试试：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+
+    </section>
+    <footer class="post-footer">
+      <section class="author">
+    <h4>mimizhang</h4>
+    <p>A designer, developer and entrepreneur. Spends his time travelling the world with a bag of kites. Likes journalism and publishing platforms.</p>
+</section>
+      <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2017/03/15/hexo+github自建博客/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/03/15/hexo+github自建博客/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2017/03/15/hexo+github自建博客/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+    </footer>
+  </article>
+  <nav class="pagination" role="pagination">
+    
+    <a class="newer-posts" href="/2017/03/15/Quick Start/">
+        ← Quick Start
+    </a>
+    
+    <span class="page-number">•</span>
+    
+</nav>
+  <div id="comment" class="comments-area">
+    <h1 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h1>
+
+    
+</div>
+</main>
+
+
+  
+<footer class="site-footer">
+  
+  <div class="inner">
+     <section class="copyright">All content copyright <a href="/">MIMI's BLOG</a> &copy; 2014 &bull; All rights reserved.</section>
+     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
+  </div>
+</footer>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+
+
+
+
+
+
+</body>
+</html>
