@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="python,data mining,machine learning,NLP">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="mimizhang">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Facebook可视化工具Visdom入门"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="python,data mining,machine learning,NLP" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="MIMI&#39;s BLOG"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Facebook可视化工具Visdom入门 - MIMI&#39;s BLOG</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">MIMI's BLOG</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/mimizhang">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/picjumbo.com_HNCK9540.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Facebook可视化工具Visdom入门</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-03-24
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Facebook/">#Facebook</a> <a href="/tags/visdom/">#visdom</a> <a href="/tags/python画图工具/">#python画图工具</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/Python/">Python</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>Visdom支持Python和Torch，以下内容只涉及Python</p>
+<h2 id="1-Setup-安装"><a href="#1-Setup-安装" class="headerlink" title="1. Setup 安装"></a>1. Setup 安装</h2><p>通过<code>pip</code>安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install visdom</div></pre></td></tr></table></figure>
+<h2 id="2-Launch-启动"><a href="#2-Launch-启动" class="headerlink" title="2. Launch 启动"></a>2. Launch 启动</h2><p>终端输入下面命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python -m visdom.server</div></pre></td></tr></table></figure>
+<p>在浏览器中打开<a href="http://localhost:8097，进入下面的界面：" target="_blank" rel="external">http://localhost:8097，进入下面的界面：</a></p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-03-23%20%E4%B8%8A%E5%8D%8811.38.44.png" alt=""></p>
+<h2 id="3-Visualization-API"><a href="#3-Visualization-API" class="headerlink" title="3. Visualization API"></a>3. Visualization API</h2><p>目前Visdom支持以下API：</p>
+<ul>
+<li><code>vis.scatter</code>  : 2D or 3D 点状图</li>
+<li><code>vis.line</code>     : line plots 折线图</li>
+<li><code>vis.stem</code>     : stem plots 杆状图</li>
+<li><code>vis.heatmap</code>  : heatmap plots 热力图</li>
+<li><code>vis.bar</code>      : bar graphs 条形图</li>
+<li><code>vis.histogram</code>: histograms 直方图</li>
+<li><code>vis.pie</code>：饼状图</li>
+<li><code>vis.boxplot</code>  : boxplots 箱形图</li>
+<li><code>vis.surf</code>     : surface plots 曲面图</li>
+<li><code>vis.contour</code>  : contour plots 等高线图</li>
+<li><code>vis.quiver</code>   : quiver plots 矢量图</li>
+<li><code>vis.image</code>    : images 图片</li>
+<li><code>vis.text</code>     : text box 文本</li>
+<li><code>vis.save</code>     : serialize state</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> visdom <span class="keyword">import</span> Visdom</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> math</div></pre></td></tr></table></figure>
+<h3 id="3-1-vis-scatter"><a href="#3-1-vis-scatter" class="headerlink" title="3.1 vis.scatter"></a>3.1 <code>vis.scatter</code></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># scatter plots</span></div><div class="line">Y = np.random.rand(<span class="number">30</span>)</div><div class="line">X = np.random.rand(<span class="number">30</span>, <span class="number">2</span>)</div><div class="line">viz.scatter(</div><div class="line">    X=X, <span class="comment"># 二维或者三维矩阵</span></div><div class="line">    Y=(Y[Y &gt; <span class="number">0</span>] + <span class="number">1.5</span>).astype(int), <span class="comment"># 暂时还不知道是什么鬼</span></div><div class="line">    opts=dict(</div><div class="line">        legend=[<span class="string">'Apples'</span>, <span class="string">'Pears'</span>], <span class="comment"># 图标</span></div><div class="line">        xtickmin=<span class="number">-5</span>, <span class="comment"># 刻度最小值</span></div><div class="line">        xtickmax=<span class="number">5</span>, <span class="comment">#刻度最大值</span></div><div class="line">        xtickstep=<span class="number">0.5</span>, <span class="comment"># 刻度间隔</span></div><div class="line">        ytickmin=<span class="number">-5</span>,</div><div class="line">        ytickmax=<span class="number">5</span>,</div><div class="line">        ytickstep=<span class="number">0.5</span>,</div><div class="line">        markersymbol=<span class="string">'point'</span>, <span class="comment"># 点的样式</span></div><div class="line">        markersize=<span class="number">10</span> <span class="comment">#点大小</span></div><div class="line">    )</div><div class="line">)</div></pre></td></tr></table></figure>
+<h3 id="3-2-vis-line"><a href="#3-2-vis-line" class="headerlink" title="3.2 vis.line"></a>3.2 <code>vis.line</code></h3><p>插播一条Numpy广告</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>a = np.array((<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>))</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>b = np.array((<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>))</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>np.column_stack((a,b))</div><div class="line">array([[<span class="number">1</span>, <span class="number">2</span>],</div><div class="line">       [<span class="number">2</span>, <span class="number">3</span>],</div><div class="line">       [<span class="number">3</span>, <span class="number">4</span>]])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>np.row_stack((a,b))</div><div class="line">array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</div><div class="line">       [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]])</div></pre></td></tr></table></figure>
+<p><code>Y</code>是一个N×M的矩阵，对应的是y轴的值。X为与Y一一对应的X轴上的值。如果X为N×1矩阵，那么Y上所有列所对应的X轴上的值都是相同的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Y = np.linspace(<span class="number">-5</span>, <span class="number">5</span>, <span class="number">100</span>)</div><div class="line">viz.line(</div><div class="line">    Y=np.column_stack((Y * Y, np.sqrt(Y + <span class="number">5</span>))),</div><div class="line">    X=np.column_stack((Y, Y)),</div><div class="line">    opts=dict(markers=<span class="keyword">False</span>),</div><div class="line">)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">Y = np.linspace(<span class="number">0</span>, <span class="number">4</span>, <span class="number">200</span>)</div><div class="line">win = viz.line(</div><div class="line">    Y=np.column_stack((np.sqrt(Y), np.sqrt(Y) + <span class="number">2</span>)),</div><div class="line">    X=np.column_stack((Y, Y)),</div><div class="line">    opts=dict(</div><div class="line">        fillarea=<span class="keyword">True</span>,</div><div class="line">        legend=<span class="keyword">False</span>,</div><div class="line">        width=<span class="number">400</span>,</div><div class="line">        height=<span class="number">400</span>,</div><div class="line">        xlabel=<span class="string">'Time'</span>,</div><div class="line">        ylabel=<span class="string">'Volume'</span>,</div><div class="line">        ytype=<span class="string">'log'</span>,</div><div class="line">        title=<span class="string">'Stacked area plot'</span>,</div><div class="line">        marginleft=<span class="number">30</span>,</div><div class="line">        marginright=<span class="number">30</span>,</div><div class="line">        marginbottom=<span class="number">80</span>,</div><div class="line">        margintop=<span class="number">30</span>,</div><div class="line">    ),</div><div class="line">)</div></pre></td></tr></table></figure>
+<p>下面是一个在原图上再画图的例子(试试看第二个<code>vis.line</code>去掉<code>update</code>参数会发生什么？<code>update=&#39;append&#39;</code>和是一样的<code>updateTrace</code>效果)：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># line updates</span></div><div class="line">win = viz.line(</div><div class="line">    X=np.column_stack((np.arange(<span class="number">0</span>, <span class="number">10</span>), np.arange(<span class="number">0</span>, <span class="number">10</span>))),  </div><div class="line">    Y=np.column_stack((np.linspace(<span class="number">5</span>, <span class="number">10</span>, <span class="number">10</span>), np.linspace(<span class="number">5</span>, <span class="number">10</span>, <span class="number">10</span>) + <span class="number">5</span>)),</div><div class="line">)</div><div class="line">viz.line(</div><div class="line">    X=np.column_stack((np.arange(<span class="number">10</span>, <span class="number">20</span>), np.arange(<span class="number">10</span>, <span class="number">20</span>))),</div><div class="line">    Y=np.column_stack((np.linspace(<span class="number">5</span>, <span class="number">10</span>, <span class="number">10</span>), np.linspace(<span class="number">5</span>, <span class="number">10</span>, <span class="number">10</span>) + <span class="number">5</span>)),</div><div class="line">    win=win,</div><div class="line">    update=<span class="string">'append'</span></div><div class="line">)</div><div class="line">viz.updateTrace(</div><div class="line">    X=np.arange(<span class="number">21</span>, <span class="number">30</span>),</div><div class="line">    Y=np.arange(<span class="number">1</span>, <span class="number">10</span>),</div><div class="line">    win=win,</div><div class="line">    name=<span class="string">'2'</span></div><div class="line">)</div><div class="line">viz.updateTrace(</div><div class="line">    X=np.arange(<span class="number">1</span>, <span class="number">10</span>),</div><div class="line">    Y=np.arange(<span class="number">11</span>, <span class="number">20</span>),</div><div class="line">    win=win,</div><div class="line">    name=<span class="string">'4'</span></div><div class="line">)</div></pre></td></tr></table></figure>
+<h3 id="3-3-vis-stem"><a href="#3-3-vis-stem" class="headerlink" title="3.3 vis.stem"></a>3.3 <code>vis.stem</code></h3><p>参数<code>X</code>和<code>Y</code> 的设定与<code>vis.line</code>相反：<code>X</code>是一个N×M矩阵，表示<code>M</code>个时间序列数据中,每个时间序列数据<code>N</code>个时间点所对应的值。<code>Y</code>为与<code>X</code>相对应的时间点。如果<code>Y</code>是一个N×1矩阵，那么这<code>M</code>个时间序列数据所对应的时间点都是相同的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># stemplot</span></div><div class="line">Y = np.linspace(<span class="number">0</span>, <span class="number">2</span> * math.pi, <span class="number">70</span>)</div><div class="line">X = np.column_stack((np.sin(Y), np.cos(Y)))</div><div class="line">viz.stem(</div><div class="line">    X=X,</div><div class="line">    Y=Y,</div><div class="line">    opts=dict(legend=[<span class="string">'Sine'</span>, <span class="string">'Cosine'</span>])</div><div class="line">)</div></pre></td></tr></table></figure>
+<h3 id="3-4-vis-heatmap"><a href="#3-4-vis-heatmap" class="headerlink" title="3.4 vis.heatmap"></a>3.4 <code>vis.heatmap</code></h3><p>这里再插播一条Numpy的广告：<code>numpy.outer</code>向量外积,<code>numpy.inner</code>向量内积(点乘)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>a = np.ones((<span class="number">5</span>,))</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>b = np.linspace(<span class="number">-2</span>, <span class="number">2</span>, <span class="number">5</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>np.dot(a,b)</div><div class="line"><span class="number">0.0</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>np.inner(a,b)</div><div class="line"><span class="number">0.0</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>np.outer(a,b)</div><div class="line">array([[<span class="number">-2.</span>, <span class="number">-1.</span>,  <span class="number">0.</span>,  <span class="number">1.</span>,  <span class="number">2.</span>],</div><div class="line">       [<span class="number">-2.</span>, <span class="number">-1.</span>,  <span class="number">0.</span>,  <span class="number">1.</span>,  <span class="number">2.</span>],</div><div class="line">       [<span class="number">-2.</span>, <span class="number">-1.</span>,  <span class="number">0.</span>,  <span class="number">1.</span>,  <span class="number">2.</span>],</div><div class="line">       [<span class="number">-2.</span>, <span class="number">-1.</span>,  <span class="number">0.</span>,  <span class="number">1.</span>,  <span class="number">2.</span>],</div><div class="line">       [<span class="number">-2.</span>, <span class="number">-1.</span>,  <span class="number">0.</span>,  <span class="number">1.</span>,  <span class="number">2.</span>]])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a*b</div><div class="line">array([<span class="number">-2.</span>, <span class="number">-1.</span>,  <span class="number">0.</span>,  <span class="number">1.</span>,  <span class="number">2.</span>])</div></pre></td></tr></table></figure>
+<p>参数<code>X</code>是一个N×M矩阵，每个点对应于热力图上的每个位置。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># heatmap</span></div><div class="line">viz.heatmap(</div><div class="line">    X=np.outer(np.arange(<span class="number">1</span>, <span class="number">6</span>), np.arange(<span class="number">1</span>, <span class="number">11</span>)),</div><div class="line">    opts=dict(</div><div class="line">        columnnames=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>, <span class="string">'i'</span>, <span class="string">'j'</span>],</div><div class="line">        rownames=[<span class="string">'y1'</span>, <span class="string">'y2'</span>, <span class="string">'y3'</span>, <span class="string">'y4'</span>, <span class="string">'y5'</span>],</div><div class="line">        colormap=<span class="string">'Electric'</span>,</div><div class="line">    )</div><div class="line">)</div></pre></td></tr></table></figure>
+<h3 id="3-5-vis-bar"><a href="#3-5-vis-bar" class="headerlink" title="3.5 vis.bar"></a>3.5 <code>vis.bar</code></h3><p>参数<code>X</code>是一个N×M矩阵，矩阵中的每个值对应的是每个柱形的高度。M对应的是变量的数量。Y是一个N×1矩阵，对应的是X轴上的取值。</p>
+<p>参数<code>stacked=True</code>时画出的堆叠图</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># bar plots</span></div><div class="line">viz.bar(X=np.random.rand(<span class="number">20</span>))</div><div class="line">viz.bar(</div><div class="line">    X=np.abs(np.random.rand(<span class="number">5</span>, <span class="number">3</span>)),</div><div class="line"><span class="comment">#    Y=np.array(['2012', '2013', '2014', '2015', '2016']),</span></div><div class="line">    opts=dict(</div><div class="line">        stacked=<span class="keyword">True</span>,</div><div class="line">        legend=[<span class="string">'Facebook'</span>, <span class="string">'Google'</span>, <span class="string">'Twitter'</span>],</div><div class="line">        rownames=[<span class="string">'2012'</span>, <span class="string">'2013'</span>, <span class="string">'2014'</span>, <span class="string">'2015'</span>, <span class="string">'2016'</span>]</div><div class="line">    )</div><div class="line">)</div><div class="line">viz.bar(</div><div class="line">    X=np.random.rand(<span class="number">20</span>, <span class="number">3</span>),</div><div class="line">    opts=dict(</div><div class="line">        stacked=<span class="keyword">False</span>,</div><div class="line">        legend=[<span class="string">'The Netherlands'</span>, <span class="string">'France'</span>, <span class="string">'United States'</span>]</div><div class="line">    )</div><div class="line">)</div></pre></td></tr></table></figure>
+<h3 id="3-6-vis-histogram-貌似暂时只能支持数字"><a href="#3-6-vis-histogram-貌似暂时只能支持数字" class="headerlink" title="3.6 vis.histogram(貌似暂时只能支持数字)"></a>3.6 <code>vis.histogram</code>(貌似暂时只能支持数字)</h3><p><code>X</code>是一个N×1矩阵。</p>
+<p>参数<code>numbins</code>指定了直方的个数。默认为30。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># histogram</span></div><div class="line">viz.histogram(</div><div class="line">        X=np.random.rand(<span class="number">10000</span>), </div><div class="line">        opts=dict(numbins=<span class="number">20</span>)</div><div class="line">)</div><div class="line">viz.histogram(</div><div class="line">        X=np.random.randn(<span class="number">10000</span>), </div><div class="line">        opts=dict(numbins=<span class="number">30</span>)</div><div class="line">)</div></pre></td></tr></table></figure>
+<h3 id="3-7-vis-pie"><a href="#3-7-vis-pie" class="headerlink" title="3.7 vis.pie"></a>3.7 <code>vis.pie</code></h3><p>参数<code>X</code>中的每一个值对应每一个百分比</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># pie chart</span></div><div class="line">X = np.asarray([<span class="number">19</span>, <span class="number">26</span>, <span class="number">55</span>])</div><div class="line">viz.pie(</div><div class="line">    X=X,</div><div class="line">    opts=dict(legend=[<span class="string">'Residential'</span>, <span class="string">'Non-Residential'</span>, <span class="string">'Utility'</span>])</div><div class="line">)</div></pre></td></tr></table></figure>
+<h3 id="3-8-vis-boxplot"><a href="#3-8-vis-boxplot" class="headerlink" title="3.8 vis.boxplot"></a>3.8 <code>vis.boxplot</code></h3><p>参数<code>X</code>是一个N×M矩阵，M是箱子的个数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># boxplot</span></div><div class="line">X = np.random.rand(<span class="number">100</span>, <span class="number">2</span>)</div><div class="line">X[:, <span class="number">1</span>] += <span class="number">2</span></div><div class="line">viz.boxplot(</div><div class="line">    X=X,</div><div class="line">    opts=dict(legend=[<span class="string">'Men'</span>, <span class="string">'Women'</span>])</div><div class="line">)</div></pre></td></tr></table></figure>
+<h3 id="3-9-vis-surf-vis-contour"><a href="#3-9-vis-surf-vis-contour" class="headerlink" title="3.9 vis.surf,vis.contour"></a>3.9 <code>vis.surf</code>,<code>vis.contour</code></h3><p>这里再插播一条Numpy的广告：<code>numpy.tile</code>,<code>numpy.transpose</code>,<code>numpy.reshape</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>a = np.array([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>np.tile(a, <span class="number">2</span>)</div><div class="line">array([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>np.tile(a, (<span class="number">2</span>, <span class="number">2</span>))</div><div class="line">array([[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>],</div><div class="line">       [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>]])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>np.tile(a, (<span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>))</div><div class="line">array([[[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>]],</div><div class="line">       [[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>]]])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a = np.arange(<span class="number">6</span>).reshape((<span class="number">3</span>, <span class="number">2</span>))</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a</div><div class="line">array([[<span class="number">0</span>, <span class="number">1</span>],</div><div class="line">       [<span class="number">2</span>, <span class="number">3</span>],</div><div class="line">       [<span class="number">4</span>, <span class="number">5</span>]])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>np.transpose(a)</div><div class="line">array([[<span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>],</div><div class="line">       [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>]])</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># contour</span></div><div class="line">x = np.tile(np.arange(<span class="number">1</span>, <span class="number">101</span>), (<span class="number">100</span>, <span class="number">1</span>))</div><div class="line">y = x.transpose()</div><div class="line">X = np.exp((((x - <span class="number">50</span>) ** <span class="number">2</span>) + ((y - <span class="number">50</span>) ** <span class="number">2</span>)) / -(<span class="number">20.0</span> ** <span class="number">2</span>))</div><div class="line">viz.contour(X=X, opts=dict(colormap=<span class="string">'Viridis'</span>))</div><div class="line"></div><div class="line"><span class="comment"># surface</span></div><div class="line">viz.surf(X=X, opts=dict(colormap=<span class="string">'Hot'</span>))</div></pre></td></tr></table></figure>
+<h3 id="3-10-vis-quiver"><a href="#3-10-vis-quiver" class="headerlink" title="3.10 vis.quiver"></a>3.10 <code>vis.quiver</code></h3><h3 id="3-11-viz-text-viz-close"><a href="#3-11-viz-text-viz-close" class="headerlink" title="3.11 viz.text,viz.close()"></a>3.11 <code>viz.text</code>,<code>viz.close()</code></h3><p>打印文本，关闭某个窗口</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>textwindow = viz.text(<span class="string">'Hello World!'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>viz.close(win=textwindow)</div><div class="line"><span class="string">''</span></div></pre></td></tr></table></figure>
+<h2 id="4-OPTS参数"><a href="#4-OPTS参数" class="headerlink" title="4. OPTS参数"></a>4. <code>OPTS</code>参数</h2><ul>
+<li><code>options.title</code>       : 标题</li>
+<li><code>options.width</code>       : 图片宽度</li>
+<li><code>options.height</code>      : 图片高度</li>
+<li><code>options.showlegend</code>  : 是否显示图标 (<code>true</code> or <code>false</code>)</li>
+<li><code>options.xtype</code>       : type of x-axis (<code>&#39;linear&#39;</code> or <code>&#39;log&#39;</code>)</li>
+<li><code>options.xlabel</code>      : label of x-axis</li>
+<li><code>options.xtick</code>       : show ticks on x-axis (<code>boolean</code>)</li>
+<li><code>options.xtickmin</code>    : X轴上的第一个刻度（最小） (<code>number</code>)</li>
+<li><code>options.xtickmax</code>    : X轴上的最后一个刻度（最大） (<code>number</code>)</li>
+<li><code>options.xtickstep</code>   : X轴刻度间距 (<code>number</code>)</li>
+<li><code>options.ytype</code>       : type of y-axis (<code>&#39;linear&#39;</code> or <code>&#39;log&#39;</code>)</li>
+<li><code>options.ylabel</code>      : label of y-axis</li>
+<li><code>options.ytick</code>       : show ticks on y-axis (<code>boolean</code>)</li>
+<li><code>options.ytickmin</code>    : Y轴上的第一个刻度（最小） (<code>number</code>)</li>
+<li><code>options.ytickmax</code>    : Y轴上的最后一个刻度（最大） (<code>number</code>)</li>
+<li><code>options.ytickstep</code>   : Y轴刻度间距 (<code>number</code>)</li>
+<li><code>options.marginleft</code>  : left margin (in pixels)</li>
+<li><code>options.marginright</code> : right margin (in pixels)</li>
+<li><code>options.margintop</code>   : top margin (in pixels)</li>
+<li><code>options.marginbottom</code>: bottom margin (in pixels)</li>
+</ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/mimizhang" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 mimizhang<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
