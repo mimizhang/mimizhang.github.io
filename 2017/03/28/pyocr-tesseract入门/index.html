@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="python,data mining,machine learning,NLP">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="mimizhang">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="pyocr+tesseract入门"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="python,data mining,machine learning,NLP" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="MIMI&#39;s BLOG"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>pyocr+tesseract入门 - MIMI&#39;s BLOG</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">MIMI's BLOG</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/mimizhang">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/picjumbo.com_HNCK9540.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>pyocr+tesseract入门</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-03-28
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/python/">#python</a> <a href="/tags/pyocr/">#pyocr</a> <a href="/tags/tesseract/">#tesseract</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/Python/">Python</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <blockquote>
+<p>针对mac系统</p>
+</blockquote>
+<p>tesseract项目主页：<a href="https://github.com/tesseract-ocr/tesseract" target="_blank" rel="external">https://github.com/tesseract-ocr/tesseract</a></p>
+<p>pyocr项目主页：<a href="https://github.com/jflesch/pyocr" target="_blank" rel="external">https://github.com/jflesch/pyocr</a></p>
+<h2 id="1-tesseract安装"><a href="#1-tesseract安装" class="headerlink" title="1. tesseract安装"></a>1. tesseract安装</h2><p>终端输入以下命令(未安装<code>brew</code>可前往<a href="https://brew.sh/index_zh-cn.html" target="_blank" rel="external">这里</a>安装)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install tesseract</div></pre></td></tr></table></figure>
+<h2 id="2-tesseract语言包"><a href="#2-tesseract语言包" class="headerlink" title="2. tesseract语言包"></a>2. tesseract语言包</h2><ul>
+<li>各语言包下载地址：<a href="https://github.com/tesseract-ocr/tesseract/wiki/Data-Files" target="_blank" rel="external">https://github.com/tesseract-ocr/tesseract/wiki/Data-Files</a></li>
+<li>语言包安放路径：/usr/local/Cellar/tesseract/3.05.00/share/tessdata(3.05.00为版本号) 或：/usr/local/share/tessdata</li>
+</ul>
+<h2 id="3-tesseract手册"><a href="#3-tesseract手册" class="headerlink" title="3. tesseract手册"></a>3. tesseract手册</h2><p>通过man或者--help(-h)命令查看帮助手册</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">zhangmimideMacBook-Pro:3.05.00 zhangmimi$ man tesseract</div><div class="line">zhangmimideMacBook-Pro:3.05.00 zhangmimi$ tesseract -h</div></pre></td></tr></table></figure>
+<h2 id="4-PyOCR"><a href="#4-PyOCR" class="headerlink" title="4. PyOCR"></a>4. PyOCR</h2><h3 id="4-1-常用API"><a href="#4-1-常用API" class="headerlink" title="4.1 常用API"></a>4.1 常用API</h3><h4 id="4-1-1-pyocr-get-available-tools"><a href="#4-1-1-pyocr-get-available-tools" class="headerlink" title="4.1.1  pyocr.get_available_tools()"></a>4.1.1  <code>pyocr.get_available_tools()</code></h4><p>列出可用的ocr程序(返回list)，<strong>Pyocr</strong>目前支持<strong>Tesseract</strong>和<strong>Cuneiform</strong>，这里我们只讨论<strong>Tesseract</strong>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">In[<span class="number">35</span>]: pyocr.get_available_tools()</div><div class="line">Out[<span class="number">35</span>]: </div><div class="line">[&lt;module <span class="string">'pyocr.tesseract'</span> <span class="keyword">from</span> <span class="string">'/Users/zhangmimi/anaconda/lib/python3.6/site-packages/pyocr/tesseract.py'</span>&gt;]</div></pre></td></tr></table></figure>
+<h4 id="4-1-2-pyocr-tesseract-is-available"><a href="#4-1-2-pyocr-tesseract-is-available" class="headerlink" title="4.1.2 pyocr.tesseract.is_available()"></a>4.1.2 <code>pyocr.tesseract.is_available()</code></h4><p><strong>tesseract</strong>是否可用。这里没有安装<strong>libtesseract</strong>，所以返回<code>false</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">In[<span class="number">36</span>]: pyocr.tesseract.is_available()</div><div class="line">Out[<span class="number">36</span>]: </div><div class="line"><span class="keyword">True</span></div><div class="line">In[<span class="number">37</span>]: pyocr.libtesseract.is_available()</div><div class="line">Out[<span class="number">37</span>]: </div><div class="line"><span class="keyword">False</span></div></pre></td></tr></table></figure>
+<h4 id="4-1-3-pyocr-tesseract-get-name"><a href="#4-1-3-pyocr-tesseract-get-name" class="headerlink" title="4.1.3 pyocr.tesseract.get_name()"></a>4.1.3 <code>pyocr.tesseract.get_name()</code></h4><p>获取tesseract的名称</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">In[<span class="number">38</span>]: pyocr.tesseract.get_name()</div><div class="line">Out[<span class="number">38</span>]: </div><div class="line"><span class="string">'Tesseract (sh)'</span></div></pre></td></tr></table></figure>
+<h4 id="4-1-4-pyocr-tesseract-get-version"><a href="#4-1-4-pyocr-tesseract-get-version" class="headerlink" title="4.1.4 pyocr.tesseract.get_version()"></a>4.1.4 <code>pyocr.tesseract.get_version()</code></h4><p>版本号</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">In[<span class="number">39</span>]: pyocr.tesseract.get_version()</div><div class="line">Out[<span class="number">39</span>]: </div><div class="line">(<span class="number">3</span>, <span class="number">5</span>, <span class="number">0</span>)</div></pre></td></tr></table></figure>
+<h4 id="4-1-5-pyocr-tesseract-get-available-builders"><a href="#4-1-5-pyocr-tesseract-get-available-builders" class="headerlink" title="4.1.5 pyocr.tesseract.get_available_builders()"></a>4.1.5 <code>pyocr.tesseract.get_available_builders()</code></h4><p>可用的builder，返回的是list。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">In[<span class="number">40</span>]: pyocr.tesseract.get_available_builders()</div><div class="line">Out[<span class="number">40</span>]: </div><div class="line"></div><div class="line">[pyocr.builders.LineBoxBuilder,</div><div class="line"> pyocr.builders.TextBuilder,</div><div class="line"> pyocr.builders.WordBoxBuilder,</div><div class="line"> pyocr.tesseract.CharBoxBuilder,</div><div class="line"> pyocr.builders.DigitBuilder]</div></pre></td></tr></table></figure>
+<h4 id="4-1-6-pyocr-tesseract-get-available-languages"><a href="#4-1-6-pyocr-tesseract-get-available-languages" class="headerlink" title="4.1.6 pyocr.tesseract.get_available_languages()"></a>4.1.6 <code>pyocr.tesseract.get_available_languages()</code></h4><p>可用的语言，返回的是list。博主安装时默认安装的语言包只有<code>eng</code>和<code>osd</code>,其他语言包可自行添加。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">In[<span class="number">41</span>]: pyocr.tesseract.get_available_languages()</div><div class="line">Out[<span class="number">41</span>]: </div><div class="line">[<span class="string">'chi_sim'</span>, <span class="string">'chi_tra'</span>, <span class="string">'eng'</span>, <span class="string">'equ'</span>, <span class="string">'osd'</span>]</div></pre></td></tr></table></figure>
+<h4 id="4-1-7-pyocr-tesseract-cleanup"><a href="#4-1-7-pyocr-tesseract-cleanup" class="headerlink" title="4.1.7 pyocr.tesseract.cleanup()"></a>4.1.7 <code>pyocr.tesseract.cleanup()</code></h4><p>删除某个文件（忽略不存在的文件，参数为文件名）</p>
+<h4 id="4-1-8-pyocr-tesseract-can-detect-orientation"><a href="#4-1-8-pyocr-tesseract-can-detect-orientation" class="headerlink" title="4.1.8 pyocr.tesseract.can_detect_orientation"></a>4.1.8 <code>pyocr.tesseract.can_detect_orientation</code></h4><p>是否可以检测方向</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">In[<span class="number">43</span>]: pyocr.tesseract.can_detect_orientation()</div><div class="line">Out[<span class="number">43</span>]: </div><div class="line"><span class="keyword">True</span></div></pre></td></tr></table></figure>
+<h4 id="4-1-9-pyocr-tesseract-detect-orientation"><a href="#4-1-9-pyocr-tesseract-detect-orientation" class="headerlink" title="4.1.9 pyocr.tesseract.detect_orientation"></a>4.1.9 <code>pyocr.tesseract.detect_orientation</code></h4><p>检测图片方向，<strong>Tesseract</strong> 只能返回0, 90, 180, 270这四个角度。</p>
+<h4 id="4-1-10-pyocr-tesseract-image-to-string"><a href="#4-1-10-pyocr-tesseract-image-to-string" class="headerlink" title="4.1.10 pyocr.tesseract.image_to_string"></a>4.1.10 <code>pyocr.tesseract.image_to_string</code></h4><p>图像内容转字符串</p>
+<h3 id="5-用法"><a href="#5-用法" class="headerlink" title="5. 用法"></a>5. 用法</h3><p>下面沿着官方文档走一遍(以img1和img2为例)：</p>
+<p><strong>img1:</strong></p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-03-28%20%E4%B8%8B%E5%8D%8812.15.21.png" alt=""></p>
+<p><strong>img2：</strong></p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/digit_test.png" alt=""></p>
+<h4 id="5-1-Initialization初始化"><a href="#5-1-Initialization初始化" class="headerlink" title="5.1 Initialization初始化"></a>5.1 Initialization初始化</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</div><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line"><span class="keyword">import</span> pyocr</div><div class="line"><span class="keyword">import</span> pyocr.builders</div><div class="line"></div><div class="line"><span class="comment"># 列出可用的程序，我们这里只安装了tesseract</span></div><div class="line">tools = pyocr.get_available_tools()</div><div class="line"><span class="keyword">if</span> len(tools) == <span class="number">0</span>:</div><div class="line">    print(<span class="string">"No OCR tool found"</span>)</div><div class="line">    <span class="comment"># 如果没有找到则退出程序</span></div><div class="line">    sys.exit(<span class="number">1</span>)</div><div class="line"><span class="comment"># The tools are returned in the recommended order of usage</span></div><div class="line">tool = tools[<span class="number">0</span>]</div><div class="line">print(<span class="string">"Will use tool '%s'"</span> % (tool.get_name()))</div><div class="line"><span class="comment"># Ex: Will use tool 'tesseract'</span></div><div class="line"></div><div class="line">langs = tool.get_available_languages()</div><div class="line">print(<span class="string">"Available languages: %s"</span> % <span class="string">", "</span>.join(langs))</div><div class="line">lang = langs[<span class="number">0</span>]</div><div class="line">print(<span class="string">"Will use lang '%s'"</span> % (lang))</div></pre></td></tr></table></figure>
+<h4 id="5-2-Image-to-text"><a href="#5-2-Image-to-text" class="headerlink" title="5.2 Image to text"></a>5.2 Image to text</h4><p>参数:<br>    image — 先通过PIL模块打开DISK中的图片.<br>    lang — 指定语言.<br>    builder — 默认的builder是TextBuilder.</p>
+<p>返回:<br>    返回的类型随所指定的builder而不同。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># TextBuilder用法</span></div><div class="line">txt = tool.image_to_string(</div><div class="line">    Image.open(<span class="string">'/Users/zhangmimi/Desktop/屏幕快照 2017-03-28 下午12.15.21.png'</span>),</div><div class="line">    lang=lang,</div><div class="line">    builder=pyocr.builders.TextBuilder()</div><div class="line">)</div><div class="line">print(txt)</div><div class="line"><span class="comment"># 输出的结果为字符串</span></div><div class="line"><span class="comment"># txt is a Python string</span></div><div class="line"></div><div class="line"><span class="comment"># WordBoxBuilder用法</span></div><div class="line">word_boxes = tool.image_to_string(</div><div class="line">    Image.open(<span class="string">'/Users/zhangmimi/Desktop/屏幕快照 2017-03-28 下午12.15.21.png'</span>),</div><div class="line">    lang=lang,</div><div class="line">    builder=pyocr.builders.WordBoxBuilder()</div><div class="line">)</div><div class="line"><span class="keyword">for</span> elem <span class="keyword">in</span> word_boxes:</div><div class="line">    print(elem.content, elem.position)</div><div class="line"><span class="comment"># 返回的是一个list,list中的每个元素为box objects,box objects中存着box.content内容和每个词的位置box.position</span></div><div class="line"><span class="comment"># # list of box objects. For each box object:</span></div><div class="line"><span class="comment"># #   box.content is the word in the box</span></div><div class="line"><span class="comment"># #   box.position is its position on the page (in pixels)</span></div><div class="line"><span class="comment"># #</span></div><div class="line"><span class="comment"># # Beware that some OCR tools (Tesseract for instance)</span></div><div class="line"><span class="comment"># # may return empty boxes</span></div><div class="line"></div><div class="line"><span class="comment"># LineBoxBuilder用法</span></div><div class="line">line_and_word_boxes = tool.image_to_string(</div><div class="line">    Image.open(<span class="string">'/Users/zhangmimi/Desktop/屏幕快照 2017-03-28 下午12.15.21.png'</span>),</div><div class="line">    lang=lang,</div><div class="line">    builder=pyocr.builders.LineBoxBuilder()</div><div class="line">)</div><div class="line"><span class="comment"># line_and_word_boxes也是list,list中的每个line objects有line.word_boxes(结构和box objects相同),line.content(每一行的内容)和位置line.position</span></div><div class="line">print(len(line_and_word_boxes))</div><div class="line"><span class="keyword">for</span> line <span class="keyword">in</span> line_and_word_boxes:</div><div class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> line.word_boxes:</div><div class="line">        print(word.content, word.position)</div><div class="line">    print(line.content, line.position)</div><div class="line"><span class="comment"># # list of line objects. For each line object:</span></div><div class="line"><span class="comment"># #   line.word_boxes is a list of word boxes (the individual words in the line)</span></div><div class="line"><span class="comment"># #   line.content is the whole text of the line</span></div><div class="line"><span class="comment"># #   line.position is the position of the whole line on the page (in pixels)</span></div><div class="line"><span class="comment"># #</span></div><div class="line"><span class="comment"># # Beware that some OCR tools (Tesseract for instance)</span></div><div class="line"><span class="comment"># # may return empty boxes</span></div><div class="line"><span class="comment"># 识别数字</span></div><div class="line"><span class="comment"># Digits - Only Tesseract (not 'libtesseract' yet !)</span></div><div class="line">digits = tool.image_to_string(</div><div class="line">    Image.open(<span class="string">'/Users/zhangmimi/Desktop/digit_test.png'</span>),</div><div class="line">    lang=lang,</div><div class="line">    builder=pyocr.builders.DigitBuilder(),</div><div class="line">)</div><div class="line"></div><div class="line">print(digits.replace(<span class="string">' '</span>, <span class="string">''</span>))</div><div class="line"><span class="comment"># digits is a python string</span></div></pre></td></tr></table></figure>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/mimizhang" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 mimizhang<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
