@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="python,data mining,machine learning,NLP">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="mimizhang">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="设置shadowsocks为全局代理"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="python,data mining,machine learning,NLP" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="MIMI&#39;s BLOG"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>设置shadowsocks为全局代理 - MIMI&#39;s BLOG</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">MIMI's BLOG</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/mimizhang">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/picjumbo.com_HNCK9540.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>设置shadowsocks为全局代理</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-05-08
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/shadowsocks/">#shadowsocks</a> <a href="/tags/翻墙/">#翻墙</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="设置shadowsocks为全局代理"><a href="#设置shadowsocks为全局代理" class="headerlink" title="设置shadowsocks为全局代理"></a>设置shadowsocks为全局代理</h1><blockquote>
+<p>以下仅针对mac用户</p>
+</blockquote>
+<p>从VPN转为shadowsocks翻墙之后，最大的困惑是socks5只是局部代理，不能像VPN那样把整个电脑都代理（VPN和shadowsocks的区别可以<a href="https://doub.io/ss-jc9/" target="_blank" rel="external">参考这里</a>）。就拿我们做爬虫来说，最常接触的就是浏览器，抓包工具和写脚本，但是会发现只有浏览器能够走socks5，也就是说你要爬一个被墙的网站，浏览器能够访问，但是写的脚本无法访问，抓包工具charlse也无法录制到数据（当然在脚本中设置代理或者在charles中设置外部代理也可以实现相同的效果，但不免有点繁琐）。因此我们要想办法把shadowsocks设置为全局代理。在这里我们可以使用<a href="https://www.proxifier.com/" target="_blank" rel="external">Proxifier</a>（<a href="https://pan.baidu.com/s/1eQ1tD9g" target="_blank" rel="external">下载</a>）把shadowsocks代理转为全局代理。</p>
+<h2 id="1-设置代理服务器"><a href="#1-设置代理服务器" class="headerlink" title="1. 设置代理服务器"></a>1. <strong>设置代理服务器</strong></h2><p>安装好Proxifier，点击Profile &gt;&gt; Proxy Servers 可以看到下面的界面（下图已经有一条代理设置，点击Add后填上相应的地址和端口（shadowsocks默认端口是1080）以及协议的形式保存即可）：</p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-08%20%E4%B8%8B%E5%8D%883.56.05.png" alt=""></p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-08%20%E4%B8%8B%E5%8D%884.04.40.png" alt=""></p>
+<h2 id="2-开启远程dns解析"><a href="#2-开启远程dns解析" class="headerlink" title="2. 开启远程dns解析"></a>2. 开启远程dns解析</h2><p>为了防止DNS污染，DNS设置为使用远程服务器的DNS设置：</p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-08%20%E4%B8%8B%E5%8D%884.05.40.png" alt=""></p>
+<p>以上两步简单的设置即可实现全局代理，你可以通过Charles录制到走sock5协议的数据，终端也可翻墙。</p>
+<h2 id="3-附：不通过Proxifier设全局代理，实现charles抓包和python设置requests代理"><a href="#3-附：不通过Proxifier设全局代理，实现charles抓包和python设置requests代理" class="headerlink" title="3. 附：不通过Proxifier设全局代理，实现charles抓包和python设置requests代理"></a>3. 附：不通过Proxifier设全局代理，实现charles抓包和python设置requests代理</h2><h3 id="3-1-charles设置外部代理"><a href="#3-1-charles设置外部代理" class="headerlink" title="3.1 charles设置外部代理"></a>3.1 charles设置外部代理</h3><p>Proxy &gt;&gt; External Proxy Settings </p>
+<p>地址和端口对应的是shaodowsocks偏好设置中的HTTP代理监听的地址和端口：</p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-08%20%E4%B8%8B%E5%8D%888.15.56.png" alt=""></p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-08%20%E4%B8%8B%E5%8D%888.27.57.png" alt=""></p>
+<p>设置完后重启Charles，Charles即可录包。</p>
+<p>这样设置Charles，不仅Charles可实现捕捉走socks协议的数据，而且也可实现全局代理，在终端上也可实现翻墙。</p>
+<h3 id="3-2-Python-requests包设置代理"><a href="#3-2-Python-requests包设置代理" class="headerlink" title="3.2 Python requests包设置代理"></a>3.2 Python requests包设置代理</h3><p>以下引用至<a href="http://cn.python-requests.org/zh_CN/latest/user/advanced.html#proxies" target="_blank" rel="external">官方文档</a>：</p>
+<blockquote>
+<p>除了基本的 HTTP 代理，Requests 还支持 SOCKS 协议的代理。这是一个可选功能，若要使用， 你需要安装第三方库。<br>你可以用 pip 获取依赖:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; $ pip install requests[socks]</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<p>安装好依赖以后，使用 SOCKS 代理和使用 HTTP 代理一样简单：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; proxies = &#123;</div><div class="line">&gt;     <span class="string">'http'</span>: <span class="string">'socks5://user:pass@host:port'</span>,</div><div class="line">&gt;     <span class="string">'https'</span>: <span class="string">'socks5://user:pass@host:port'</span></div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p><strong>举个例子</strong>：</p>
+<p>当我们使用shadowsocks代理时，shadowsocks会自动修改系统代理设置，代理地址可从<strong>网络偏好设置</strong>中查看：</p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-08%20%E4%B8%8B%E5%8D%8810.03.30.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line"></div><div class="line">proxies = &#123;</div><div class="line">    <span class="string">'https'</span>: <span class="string">'socks5://127.0.0.1:1080'</span>,</div><div class="line">    <span class="string">'http'</span>: <span class="string">'socks5://127.0.0.1:1080'</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">response = requests.get(<span class="string">'https://www.google.com/'</span>, proxies=proxies, verify=<span class="keyword">False</span>)</div></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/mimizhang" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 mimizhang<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
