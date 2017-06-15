@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="python,data mining,machine learning,NLP">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="mimizhang">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="抓包工具mitmproxy的基础用法"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="python,data mining,machine learning,NLP" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="MIMI&#39;s BLOG"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>抓包工具mitmproxy的基础用法 - MIMI&#39;s BLOG</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">MIMI's BLOG</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/mimizhang">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/picjumbo.com_HNCK9540.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>抓包工具mitmproxy的基础用法</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-06-15
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/mitmproxy/">#mitmproxy</a> <a href="/tags/抓包/">#抓包</a> <a href="/tags/中间人代理/">#中间人代理</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="抓包工具mitmproxy的基础用法"><a href="#抓包工具mitmproxy的基础用法" class="headerlink" title="抓包工具mitmproxy的基础用法"></a>抓包工具mitmproxy的基础用法</h1><p>工作中用到的抓包工具常见的windows中的Fiddler，mac中的Charles，今天介绍一款可以在终端中使用的跨平台抓包工具<a href="http://docs.mitmproxy.org/en/stable/index.html" target="_blank" rel="external">mitmproxy</a>。</p>
+<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><p>mitmproxy的安装非常简单，可以直接通过Homebrew安装。(不知道Homebrew的小伙伴可移步<a href="http://brew.sh/index_zh-cn.html" target="_blank" rel="external">Homebrew官网</a>一探究竟)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install mitmproxy</div></pre></td></tr></table></figure>
+<h2 id="2-配置"><a href="#2-配置" class="headerlink" title="2. 配置"></a>2. 配置</h2><p>和其他抓包工具一样，就要设置代理，mitmproxy默认的端口是8080，你也可以通过<code>-p</code>自定义端口：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mitmproxy -p 8080</div></pre></td></tr></table></figure>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-06-15%20%E4%B8%8B%E5%8D%886.10.10.png" alt=""></p>
+<h2 id="3-安装证书"><a href="#3-安装证书" class="headerlink" title="3. 安装证书"></a>3. 安装证书</h2><p> 前两部做好后，在终端打开mitmproxy，在浏览器中打开<a href="http://mitm.it/" target="_blank" rel="external">mitm.it</a>，下载并根据提示安装相应的证书。</p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-06-15%20%E4%B8%8B%E5%8D%887.22.07.png" alt=""></p>
+<h2 id="4-常用操作"><a href="#4-常用操作" class="headerlink" title="4. 常用操作"></a>4. 常用操作</h2><p>前三部完成后，我们就可以进行抓包了，输入<code>?</code>可以查看帮助文档：</p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-06-15%20%E4%B8%8B%E5%8D%888.03.47.png" alt=""></p>
+<h3 id="4-1-查看抓包结果"><a href="#4-1-查看抓包结果" class="headerlink" title="4.1 查看抓包结果"></a>4.1 查看抓包结果</h3><p>比如我们现在打开谷歌，你会看到像下面的抓包结果：</p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-06-15%20%E4%B8%8B%E5%8D%888.13.43.png" alt=""></p>
+<p>黄色的箭头==&gt;&gt;==指向当前的请求，列表上的请求表明了请求方法、链接、时间、状态码、数据大小。按<code>ENTER</code>键即可查看进入查看每个请求的详情：</p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-06-15%20%E4%B8%8B%E5%8D%888.18.45.png" alt=""></p>
+<p>按<code>tab</code>键可以在Request、Response和Detail间切换（也可以通过<code>H</code>，<code>L</code>左右切换）。</p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-06-15%20%E4%B8%8B%E5%8D%888.27.24.png" alt=""></p>
+<p>Response中的数据可以以不同的格式展示，按<code>m</code>键底部会出现各种数据格式的说明，如果我按<code>e</code>，数据即可以Hex格式展示：</p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-06-15%20%E4%B8%8B%E5%8D%888.30.49.png" alt=""></p>
+<p>按<code>q</code>即可回到列表。<code>q</code>可以用作回到上一级，也可以退出程序（但是<code>q</code>会询问是否退出，<code>Q</code>会强制退出。）</p>
+<h3 id="4-2-修改请求"><a href="#4-2-修改请求" class="headerlink" title="4.2 修改请求"></a>4.2 修改请求</h3><p>我们刚才打开google有很多请求，为了新一次的抓包，我希望清楚刚才所有的请求，我们可以按<code>z</code>清除列表上的所有抓包请求。</p>
+<p>我现在打开<a href="http://httpbin.org/，因为我们现在只想观察来自这个网址的请求，不希望别的请求的干扰，这时候我们可以使用过滤请求功能，按`f`键，输入`httpbin\.org`：" target="_blank" rel="external">http://httpbin.org/，因为我们现在只想观察来自这个网址的请求，不希望别的请求的干扰，这时候我们可以使用过滤请求功能，按`f`键，输入`httpbin\.org`：</a></p>
+<p>只会显示包含httpbin.org的请求：</p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-06-15%20%E4%B8%8B%E5%8D%888.59.37.png" alt=""></p>
+<p>我们可以看到，还有两张gif图片，我们同样可以把他们过滤掉：<code>httpbin\.org &amp; !gif &amp; !facebook</code>。</p>
+<p>我们进入该请求，然后按<code>e</code>可以修改该请求，底部提示我们修改相应的参数：</p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-06-15%20%E4%B8%8B%E5%8D%889.03.48.png" alt=""></p>
+<p>现在我想修改请求的url，我把url改成<a href="http://httpbin.org/ip，然后按`r`重新发送该请求，我们注意到刚才的页面是一个HTML页面，现在返回的数据是JSON，返回的是我所在的IP。" target="_blank" rel="external">http://httpbin.org/ip，然后按`r`重新发送该请求，我们注意到刚才的页面是一个HTML页面，现在返回的数据是JSON，返回的是我所在的IP。</a></p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-06-15%20%E4%B8%8B%E5%8D%889.10.12.png" alt=""></p>
+<h3 id="4-3-拦截请求"><a href="#4-3-拦截请求" class="headerlink" title="4.3 拦截请求"></a>4.3 拦截请求</h3><p>mitmproxy是一个中间人代理工具，客户端与服务端之间的数据传输都要经过mitmproxy。比如，客户端向服务端发送请求，请求的所有参数都将经过mitmproxy，mitmproxy可以对请求的参数进行修改然后发送给服务端。服务端收到请求后，将响应发送回客户端，又被mitmproxy拦截，mitmproxy可以修改响应内容，然后再发送回客户端。</p>
+<p>按<code>i</code>，即可进入拦截模式，底部提示我们输入拦截的条件。我们现在在浏览器中打开<a href="http://httpbin.org/ip，被拦截的请求显示橘黄色，因为浏览器的请求被mitmproxy拦截，所以浏览器一直在等待服务端的响应：" target="_blank" rel="external">http://httpbin.org/ip，被拦截的请求显示橘黄色，因为浏览器的请求被mitmproxy拦截，所以浏览器一直在等待服务端的响应：</a></p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-06-15%20%E4%B8%8B%E5%8D%8810.06.16.png" alt=""></p>
+<p>进入查看该请求，可以按<code>e</code>对请求的参数进行修改，现在我不修改请求参数，然后按<code>a</code>将请求发送给服务端，服务端的响应被mitmproxy拦截：</p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-06-15%20%E4%B8%8B%E5%8D%8810.12.35.png" alt=""></p>
+<p>我们可以修改响应的内容，欺骗客户端，本来响应的内容是当前所在的IP(134结尾)，我现在随意更改响应的内容（按<code>e</code>，底部提示我们修改的内容），然后再按<code>a</code>，将响应内容发送给客户端：</p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-06-15%20%E4%B8%8B%E5%8D%8810.15.24.png" alt=""></p>
+<p>浏览器所受到的内容就是被我修改后的内容：</p>
+<p><img src="http://o7qrps1cr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-06-15%20%E4%B8%8B%E5%8D%8810.16.07.png" alt=""></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/mimizhang" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 mimizhang<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
